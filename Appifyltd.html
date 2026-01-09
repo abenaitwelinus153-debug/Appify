@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APPIFY LTD | Future-Ready Innovation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --accent: #00d2ff;
+            --accent-dark: #3a7bd5;
+            --bg: #05070a;
+            --card-bg: #0d1117;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+        body { background-color: var(--bg); color: white; overflow-x: hidden; }
+
+        /* --- PRELOADER --- */
+        #loader {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: #000; display: flex; justify-content: center; align-items: center;
+            z-index: 9999; transition: 0.8s;
+        }
+        .shake-text {
+            font-size: clamp(3rem, 10vw, 6rem); font-weight: 800; color: var(--accent);
+            text-shadow: 0 0 30px rgba(0, 210, 255, 0.6); animation: shake 0.15s infinite;
+        }
+        @keyframes shake {
+            0% { transform: translate(3px, 0); } 25% { transform: translate(-3px, 2px); }
+            50% { transform: translate(3px, -2px); } 75% { transform: translate(-3px, 0); }
+        }
+        .loader-hidden { opacity: 0; visibility: hidden; }
+
+        /* --- NAV --- */
+        nav {
+            position: fixed; top: 0; width: 100%; padding: 20px 8%;
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(5, 7, 10, 0.9); backdrop-filter: blur(20px);
+            z-index: 1000; border-bottom: 1px solid var(--border);
+        }
+        .logo { font-size: 1.6rem; font-weight: 800; color: white; text-decoration: none; }
+        .nav-links { display: flex; gap: 30px; list-style: none; }
+        .nav-links a { text-decoration: none; color: #8892b0; font-size: 0.85rem; font-weight: 600; transition: 0.3s; }
+        .nav-links a:hover { color: var(--accent); }
+
+        /* --- HERO --- */
+        .hero {
+            height: 100vh; display: flex; flex-direction: column; justify-content: center;
+            align-items: center; text-align: center; padding: 0 10%;
+        }
+        .hero h1 { font-size: 5.5rem; line-height: 1; margin-bottom: 25px; letter-spacing: -2px; }
+        .hero span { color: var(--accent); }
+
+        /* --- MISSION --- */
+        .mission { padding: 100px 10%; background: #080b11; text-align: center; }
+        .mission p { font-size: 1.5rem; color: #8892b0; max-width: 900px; margin: 0 auto; line-height: 1.6; }
+
+        /* --- PIE APP FEATURE --- */
+        .pie-app-section {
+            padding: 100px 10%; display: flex; align-items: center; gap: 50px;
+            background: linear-gradient(135deg, #05070a 0%, #0d1117 100%);
+        }
+        .pie-content { flex: 1; }
+        .pie-visual { flex: 1; background: var(--glass); height: 400px; border-radius: 30px; display: flex; justify-content: center; align-items: center; border: 1px solid var(--border); }
+        .pie-btn { padding: 15px 40px; background: #fff; color: #000; text-decoration: none; border-radius: 50px; font-weight: 800; display: inline-block; margin-top: 20px; transition: 0.3s; }
+        .pie-btn:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(255,255,255,0.2); }
+
+        /* --- LEADERS --- */
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .leaders-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; padding: 0 8% 100px; }
+        .card { background: var(--card-bg); border: 1px solid var(--border); padding: 40px 20px; border-radius: 15px; text-align: center; transition: 0.4s; }
+        .card:hover { border-color: var(--accent); transform: translateY(-10px); }
+        .card i { font-size: 2rem; color: var(--accent); margin-bottom: 20px; }
+        .role { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: #8892b0; margin-top: 5px; }
+
+        /* --- ESTATES --- */
+        .estates-section { padding: 100px 8%; background: #000; }
+        .estates-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; }
+        .estate-item { height: 300px; background: var(--glass); border-radius: 15px; border: 1px solid var(--border); padding: 30px; display: flex; flex-direction: column; justify-content: flex-end; }
+        .estate-item h4 { font-size: 1.5rem; }
+        i class { height: 100px; width: 40px;}
+        footer { padding: 50px; text-align: center; border-top: 1px solid var(--border); color: #444; }
+    </style>
+</head>
+<body>
+
+    <div id="loader">
+        <div class="shake-text">APPIFY</div>
+    </div>
+
+    <nav>
+        <a href="#" class="logo">APPIFY LTD</a>
+        <ul class="nav-links">
+            <li><a href="#mission">MISSION</a></li>
+            <li><a href="#pie">PIE APP</a></li>
+            <li><a href="#leaders">BOARD</a></li>
+            <li><a href="#estates">ESTATES</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <h1>Engineering the<br><span>Infinite.</span></h1>
+        <p style="color:#8892b0; margin-top: 20px;">The global standard in digital transformation and premium estate assets.</p>
+    </section>
+
+    <section class="mission" id="mission">
+        <p>"Under the vision of Linus Drago, Appify Ltd exists to bridge the gap between human ambition and digital reality. We don't just build apps; we architect ecosystems."</p>
+    </section>
+
+    <section class="pie-app-section" id="pie">
+        <div class="pie-visual">
+            <i class="fas fa-chart-pie" style="font-size: 8rem; color: var(--accent);"></i>
+        </div>
+        <div class="pie-content">
+            <h2 style="font-size: 3rem;">Meet the <span style="color:var(--accent)">Pie App</span></h2>
+            <p style="color:#8892b0; margin: 20px 0;">Our flagship software solution. Pie App streamlines complex data into intuitive, actionable slices. Built by Appify, for the leaders of tomorrow.</p>
+            <a href="pie.htm" class="pie-btn">Open Pie App</a>
+        </div>
+    </section>
+
+    <section class="section-header" id="leaders" style="margin-top:100px;">
+        <h2>Executive Board</h2>
+    </section>
+
+    <div class="leaders-grid">
+        <div class="card" style="border: 1px solid gold;">
+            <i class="fas fa-crown" style="color:gold"></i>
+            <h3>Linus Drago</h3>
+            <div class="role">Chief Executive Officer</div>
+        </div>
+        <div class="card">
+            <i class="fas fa-user-shield"></i>
+            <h3>Joel A</h3>
+            <div class="role">Assistant CEO</div>
+        </div>
+        <div class="card">
+            <i class="fas fa-briefcase"></i>
+            <h3>Lincoln Mark</h3>
+            <div class="role">Manager</div>
+        </div>
+        <div class="card">
+            <i class="fas fa-city"></i>
+            <h3>Jim Edgar</h3>
+            <div class="role">Estates Manager</div>
+        </div>
+        <div class="card">
+            <i class="fas fa-vault"></i>
+            <h3>Michelle M</h3>
+            <div class="role">Treasurer</div>
+        </div>
+       <div class="card">
+            <i class="fas fa-computer"></i>
+            <h3>Michelle M</h3>
+            <div class="role">Computer</div>
+        </div>
+    </div>
+
+    <section class="estates-section" id="estates">
+        <div class="section-header">
+            <h2>Estate Management</h2>
+            <p style="color:#8892b0;">Curated by Jim Edgar</p>
+        </div>
+        <div class="estates-grid">
+            <div class="estate-item">
+                <p class="role">Residential</p>
+                <h4>The Appify Heights</h4>
+            </div>
+            <div class="estate-item">
+                <p class="role">Commercial</p>
+                <h4>Drago Tech Plaza</h4>
+            </div>
+        </div>
+    </section>
+         <i class="fa-brands fa-youtube" onclick="location.href='https://www.youtube.com/channel/UCjvZbfFEGgZAJA_BxQ847kA'"></i>
+         
+         <i class="fas-brands fa-instagram"></i>  
+     
+    <footer>
+        <p>&copy; 2025 APPIFY LTD | Registered Global Entity</p>
+    </footer>
+
+    <script>
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loader').classList.add('loader-hidden');
+            }, 2500);
+        });
+    </script>
+</body>
+</html>
